@@ -1,0 +1,12 @@
+.buttonArea {
+  display: flex;
+}
+.buttonElement {
+  padding: 10px;
+}
+.tab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}

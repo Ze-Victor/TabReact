@@ -1,0 +1,10 @@
+.pane {
+  width: 500px;
+  height: 250px;
+  border: solid 2px black;
+  background-color: #d0d0d0;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
