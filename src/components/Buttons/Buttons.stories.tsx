@@ -18,20 +18,6 @@ const Template: ComponentStory<typeof Buttons> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  text: "Buttons",
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  text: "Buttons",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  text: "Buttons",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  text: "Buttons",
+  text: "Button",
+  idx: 2,
 };

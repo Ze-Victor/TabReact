@@ -6,30 +6,24 @@ import { Tab } from "./Tab";
 export default {
   title: "Tab",
   component: Tab,
-
-  argTypes: {
-    backgroundColor: { control: "color" },
-  },
 } as ComponentMeta<typeof Tab>;
 
 const Template: ComponentStory<typeof Tab> = (args) => <Tab {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  text: "Tab",
-};
-
-export const Secondary = Template.bind({});
-Secondary.args = {
-  text: "Tab",
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  text: "Tab",
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  text: "Tab",
+  tabProp: [
+    {
+      textButton: "Button 1",
+      textPane: "Description 1",
+    },
+    {
+      textButton: "Button 2",
+      textPane: "Description 2",
+    },
+    {
+      textButton: "Button 3",
+      textPane: "Description 3",
+    },
+  ],
 };

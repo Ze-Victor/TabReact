@@ -3,41 +3,41 @@ import { Buttons } from "../Buttons/Buttons";
 import { Pane } from "../Pane/Pane";
 import "./Tab.css";
 
-const buttons = [
-  {
-    textButton: "Tab1",
-    textContent: "Conteúdo do primeiro tab",
-  },
-  {
-    textButton: "Tab2",
-    textContent: "Conteúdo do segundo tab",
-  },
-  {
-    textButton: "Tab3",
-    textContent: "Conteúdo do terceiro tab",
-  },
-];
+interface ArrayTab {
+  textButton: string;
+  textPane: string;
+}
 
-export function Tab() {
+interface PropsTab {
+  tabProp: ArrayTab[];
+  onClickButton: (n: number) => void;
+}
+
+export function Tab(props: PropsTab) {
   const [currentTab, setCurrentTab] = useState(0);
 
-  function select(optionIndex: number) {
-    console.log(`Selecionou a opção ${optionIndex}`);
+  const onSelectTab = (optionIndex: number) => {
+    props.onClickButton(optionIndex);
     setCurrentTab(optionIndex);
-  }
+  };
 
   return (
     <div className="tab">
       <div className="buttonArea">
-        {buttons.map((button, idx) => {
+        {props.tabProp.map((tab, idx) => {
           return (
-            <div className="buttonElement">
-              <Buttons text={button.textButton} onSelect={() => select(idx)} />
+            <div key={idx} className="buttonElement">
+              <Buttons
+                text={tab.textButton}
+                idx={idx}
+                onSelectButton={onSelectTab}
+                currentTab={currentTab}
+              />
             </div>
           );
         })}
       </div>
-      <Pane text={buttons[currentTab].textContent} />
+      <Pane text={props.tabProp[currentTab].textPane} />
     </div>
   );
 }
